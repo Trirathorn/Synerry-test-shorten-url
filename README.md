@@ -1,1 +1,0 @@
-# Synerry-test-shorten-url
