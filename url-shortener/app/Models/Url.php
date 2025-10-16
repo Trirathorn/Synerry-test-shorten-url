@@ -17,13 +17,11 @@ class Url extends Model
         'short_code',
         'title',
         'is_active',
-        'expires_at',
         'total_clicks',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
-        'expires_at' => 'datetime',
     ];
 
     public function user(): BelongsTo

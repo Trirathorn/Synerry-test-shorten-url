@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('short_code', 16)->unique();
             $table->string('title')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->timestamp('expires_at')->nullable();
             $table->unsignedBigInteger('total_clicks')->default(0);
             $table->timestamps();
 

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('referer')->nullable();
             $table->text('user_agent')->nullable();
             $table->string('ip_hash', 64)->nullable();
-            $table->string('country', 2)->nullable();
             $table->timestamps();
 
             $table->index(['url_id', 'clicked_at']);

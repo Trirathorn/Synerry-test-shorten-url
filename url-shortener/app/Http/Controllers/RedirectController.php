@@ -12,9 +12,6 @@ class RedirectController extends Controller
     {
         $url = Url::where('short_code', $code)
             ->where('is_active', true)
-            ->where(function ($q) {
-                $q->whereNull('expires_at')->orWhere('expires_at', '>', now());
-            })
             ->firstOrFail();
 
         // record click
@@ -24,7 +21,6 @@ class RedirectController extends Controller
             'referer' => (string) $request->headers->get('referer'),
             'user_agent' => (string) $request->userAgent(),
             'ip_hash' => $request->ip() ? hash('sha256', $request->ip()) : null,
-            'country' => null,
         ]);
 
         $url->increment('total_clicks');

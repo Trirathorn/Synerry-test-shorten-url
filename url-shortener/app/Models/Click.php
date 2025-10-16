@@ -16,7 +16,6 @@ class Click extends Model
         'referer',
         'user_agent',
         'ip_hash',
-        'country',
     ];
 
     protected $casts = [
